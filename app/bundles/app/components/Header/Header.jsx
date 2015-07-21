@@ -11,12 +11,25 @@ export default class Header extends React.Component {
   }
 
 
+  _loadComments() {
+
+    const { commentsActions, location } = this.props;
+
+    if (location.pathname !== '/login') {
+      commentsActions.loadComments({});
+    }
+
+  }
+
+
   render() {
 
     return (
         <header>
           <h1>
-            <Link to="/">Isomorphic Comments</Link>
+            <Link to="/" onClick={::this._loadComments}>
+              Isomorphic Comments
+            </Link>
           </h1>
         </header>
     );
