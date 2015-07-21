@@ -1,0 +1,28 @@
+#topbar
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  width: 100%
+  padding: .5rem
+  background-color: #fff
+  font-size: .7rem
+  text-align: center
+
+  #topbar__links-wrapper
+    @extends $layout-section
+
+    #topbar__auth-link
+      #topbar__auth-link__login
+      #topbar__auth-link__logout
+        border-bottom: 1px dotted alpha($base-text-color, .65)
+        cursor: pointer
+
+      #topbar__auth-link__login__wrapper:before
+      #topbar__auth-link__logout__wrapper:before
+        display: inline-block
+        margin-right: .5rem
+      #topbar__auth-link__login__wrapper:before
+        content: "(◕‿-)"
+      #topbar__auth-link__logout__wrapper:before
+        content: "(◕︵◕)"
