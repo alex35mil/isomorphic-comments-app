@@ -13,7 +13,7 @@ export function setLoggedInState(user) {
 }
 
 
-export function login({ data, authAgent }) {
+export function login({ data, authAgent, router }) {
 
   return dispatch => {
 
@@ -38,6 +38,7 @@ export function login({ data, authAgent }) {
               type: actionTypes.AUTH_LOGIN_SUCCEED,
               data: res.data
             });
+            if (!router.goBack()) router.transitionTo('/');
 
           }
         });
