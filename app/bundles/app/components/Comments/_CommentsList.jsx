@@ -70,7 +70,6 @@ export default class CommentsList extends React.Component {
 
     const { comments, isDestroying, destroyed } = this.props.comments;
     const { isLoggedIn } = this.props.auth;
-    console.log(destroyed);
 
     const commentsList = comments.map(comment => (
       <li key={comment.id} id={`comments__list__comment-${comment.id}`} className="comments__comment">
