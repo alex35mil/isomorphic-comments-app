@@ -21,17 +21,17 @@ export default class Meta {
 
     const base = {
 
-      pageTitle      : 'Redux on Rails scaffolder',
-      pageDescription: 'Will scaffold Redux on Rails App for you.',
+      pageTitle      : 'Isomorphic Comments',
+      pageDescription: 'Comments made isomorphic!',
       pageKeywords   : 'flux react redux rails',
       pageType       : 'website',
       pageImage      : '/images/cover.png',
-      siteName       : 'Redux on Rails scaffolder',
+      siteName       : 'Isomorphic Comments',
       facebookAppId  : props.facebookAppId || null
 
     };
 
-    const { state, route, appHost, fullPath, cssAsset } = props;
+    const { state, route, params, appHost, fullPath, cssAsset } = props;
 
     this.cssAsset      = cssAsset;
     this.appHost       = appHost;
@@ -43,11 +43,14 @@ export default class Meta {
     this.siteName      = base.siteName;
     this.facebookAppId = base.facebookAppId;
 
-
     switch (route) {
 
-      case 'dummy':
-        this.pageTitle       = 'Hi! This is page title for Dummy component!';
+      case 'comment':
+
+        const { comments } = state.comments;
+        const commentAuthor = comments.find(comment => comment.id === parseInt(params.id, 10)).author;
+
+        this.pageTitle       = `${commentAuthor}'s comment`;
         this.pageDescription = base.pageDescription;
         this.pageKeywords    = base.pageKeywords;
         break;
