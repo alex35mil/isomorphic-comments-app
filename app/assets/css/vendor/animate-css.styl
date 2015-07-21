@@ -3,6 +3,7 @@
   animation-fill-mode: both
 
 
+
 @keyframes tada
   0%
     transform: scale3d(1, 1, 1)
@@ -19,6 +20,7 @@
   animation-name: tada
 
 
+
 @keyframes shake
   0%, 100%
     transform: translate3d(0, 0, 0)
@@ -29,3 +31,41 @@
 
 .shake
   animation-name: shake
+
+
+
+@keyframes flipInX
+  0%
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg)
+    transition-timing-function: ease-in
+    opacity: 0
+  40%
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg)
+    transition-timing-function: ease-in
+  60%
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg)
+    opacity: 1
+  80%
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg)
+  100%
+    transform: perspective(400px)
+
+.flipInX
+  animation-name: flipInX
+  backface-visibility: visible !important
+
+
+
+@keyframes flipOutX
+  0%
+    transform: perspective(400px)
+  30%
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg)
+    opacity: 1
+  100%
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg)
+    opacity: 0
+
+.flipOutX
+  animation-name: flipOutX
+  backface-visibility: visible !important
