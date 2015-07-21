@@ -199,6 +199,15 @@ export default class Login extends React.Component {
               { isLoading && <Loader color="#fff" /> }
             </div>
           </form>
+          <div>
+            <p>
+              Loggedin users can destroy comments!
+            </p>
+            <p>
+              Email: <strong>demo@demo.me</strong><br />
+              Password: <strong>demopass</strong>
+            </p>
+          </div>
         </section>
     );
 
