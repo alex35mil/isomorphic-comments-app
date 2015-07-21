@@ -1,0 +1,39 @@
+#comments__form
+  margin: 1rem 0 1.9rem
+
+  @media mqPhone
+    margin: 0
+
+  input
+    width: 40%
+    margin-right: 1%
+    padding: .7rem 1rem
+    border: 0
+    border-radius: 0
+    background-color: #fff
+    box-shadow: 0 0 1px rgba(0, 0, 0, .1)
+    &:focus
+      box-shadow: 0px 0px 5px 0px rgba(#1ea9ff, 0.95)
+
+    &.error
+      background-color: #ffd0dd
+
+    @media mqPhone
+      margin: 0 0 1%
+      width: 50%
+      font-size: .8rem
+      padding: .5rem 1rem
+
+
+  .button-wrapper
+    width: 18%
+
+    @media mqPhone
+      width: 100%
+
+    button
+      width: 100%
+      margin: 0
+      padding: .7rem 1rem
+      border-radius: 0
+      transition-duration: 0s

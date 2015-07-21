@@ -1,0 +1,32 @@
+.comments__comment
+  position: relative
+  margin: 1rem 0 1.5rem
+  padding: 1.7rem 2rem 2rem
+  background-color: #fff
+  border-radius: 0
+  box-shadow: 0 0 1px rgba(0, 0, 0, .1)
+
+  .comments__comment__author
+    margin-bottom: .7rem
+
+  $cross-dim = 15px
+  $cross-line = 40%
+  .destroy
+    position: absolute
+    top: $cross-dim
+    right: $cross-dim
+    width: $cross-dim
+    height: $cross-dim
+    cursor: pointer
+    background: linear-gradient(to bottom, transparent $cross-line, #aaa $cross-line, #aaa (100% - $cross-line), transparent (100% - $cross-line)), linear-gradient(to right, transparent $cross-line, #aaa $cross-line, #aaa (100% - $cross-line), transparent (100% - $cross-line))
+    transform: rotate(45deg)
+
+  .loader-wrapper
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, .05)

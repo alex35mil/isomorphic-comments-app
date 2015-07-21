@@ -1,4 +1,4 @@
-import auth   from './auth';
-import dummy  from './dummy';
+import auth       from './auth';
+import comments   from './comments';
 
-export default { auth, dummy };
+export default { auth, comments };
