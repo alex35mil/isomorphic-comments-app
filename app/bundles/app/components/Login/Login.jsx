@@ -42,6 +42,8 @@ export default class Login extends React.Component {
 
     if (type === actionTypes.AUTH_LOGIN_FAILED) {
       this._handleFailedSubmit();
+    } else {
+      this.props.loader.done();
     }
 
   }

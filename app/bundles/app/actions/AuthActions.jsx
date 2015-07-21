@@ -57,10 +57,17 @@ export function login({ data, authAgent, router }) {
 }
 
 
-export function logout() {
+export function logout({ authAgent, router, backPath }) {
 
-  return {
-    type: actionTypes.AUTH_LOGGED_OUT
+  return dispatch => {
+
+    authAgent.logout(() => {
+      dispatch({
+        type: actionTypes.AUTH_LOGGED_OUT
+      });
+      router.transitionTo('/logout', null, { backPath });
+    });
+
   };
 
 }

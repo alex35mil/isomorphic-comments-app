@@ -4,6 +4,7 @@ import { Route }  from 'react-router';
 import App        from '../layouts/App';
 import Comments   from '../components/Comments/CommentsContainer';
 import Login      from '../components/Login/LoginContainer';
+import Logout     from '../components/Logout/Logout';
 import NotFound   from '../components/NotFound/NotFound';
 
 
@@ -15,6 +16,7 @@ export default (context) => (
     <Route name="comment"      path="/comments/:id"    component={Comments} />
 
     <Route name="login"        path="/login"    component={Login}   context={context}   onEnter={Login.DecoratedComponent.checkAuth} />
+    <Route name="logout"       path="/logout"   component={Logout} />
 
     <Route name="not-found"    path="*"         component={NotFound} />
 
