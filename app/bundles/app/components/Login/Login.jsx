@@ -201,7 +201,7 @@ export default class Login extends React.Component {
           </form>
           <div>
             <p>
-              Loggedin users can destroy comments!
+              Loggedin users can destroy comments! (not really)
             </p>
             <p>
               Email: <strong>demo@demo.me</strong><br />
