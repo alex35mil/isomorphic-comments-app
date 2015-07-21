@@ -33,9 +33,9 @@ export default class CommentItem extends React.Component {
     const { commentsActions } = this.props;
     const { comments } = this.props.comments;
 
-    const comment = comments.filter(_comment => (
+    const comment = comments.find(_comment => (
       _comment.id === parseInt(this.props.params.id, 10)
-    ))[0];
+    ));
 
     return (
       <div>
