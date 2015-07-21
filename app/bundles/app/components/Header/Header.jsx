@@ -16,7 +16,7 @@ export default class Header extends React.Component {
     return (
         <header>
           <h1>
-            <Link to="/">Isomorphic Flux</Link>
+            <Link to="/">Isomorphic Comments</Link>
           </h1>
         </header>
     );
