@@ -49,19 +49,3 @@ server {
   client_max_body_size 4G;
   keepalive_timeout 10;
 }
-
-<% if enable_ssl %>
-server {
-  server_name <%= app_domain %>;
-  listen 443;
-  root <%= deploy_to %>/current/public;
-
-  error_page 500 502 503 504 /500.html;
-  client_max_body_size 4G;
-  keepalive_timeout 10;
-
-  ssl on;
-  ssl_certificate <%= deploy_to %>/shared/ssl_cert.crt;
-  ssl_certificate_key <%= deploy_to %>/shared/ssl_private_key.key;
-}
-<% end %>

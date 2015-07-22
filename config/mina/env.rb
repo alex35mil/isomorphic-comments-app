@@ -2,7 +2,6 @@ require 'fileutils'
 
 set(:config_files, %w(
   nginx.app.conf
-  systemd.app.service
   upstart.app.conf
   logrotate
 ))
@@ -11,10 +10,6 @@ set(:symlinks, [
                  {
                      source: 'nginx.app.conf',
                      link: '{{nginx_app_config}}'
-                 },
-                 {
-                     source: 'systemd.app.service',
-                     link: '{{systemd_app_service}}'
                  },
                  {
                      source: 'upstart.app.conf',
@@ -44,28 +39,18 @@ namespace :env do
 
     if ENV['only'] == 'nginx'
       invoke :'nginx:reload'
-    # elsif ENV['only'] == 'systemd'
-    #   invoke :'systemd:app:restart'
     elsif ENV['only'] == 'upstart'
       if ENV['unit'] == 'app'
         invoke :'upstart:app:stop'
         invoke :'upstart:app:start'
-      # elsif ENV['unit'] == 'admin'
-      #   invoke :'upstart:admin:stop'
-      #   invoke :'upstart:admin:start'
       else
         invoke :'upstart:app:stop'
         invoke :'upstart:app:start'
-        # invoke :'upstart:admin:stop'
-        # invoke :'upstart:admin:start'
       end
     else
       invoke :'nginx:reload'
       invoke :'upstart:app:stop'
       invoke :'upstart:app:start'
-      # invoke :'upstart:admin:stop'
-      # invoke :'upstart:admin:start'
-      # invoke :'systemd:app:restart'
     end
     print_status 'Done.'
 
