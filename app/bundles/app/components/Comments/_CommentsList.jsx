@@ -75,7 +75,8 @@ export default class CommentsList extends React.Component {
       <li key={comment.id} id={`comments__list__comment-${comment.id}`} className="comments__comment">
         <Comment comment={comment} />
         { isLoggedIn && <div className="destroy" onClick={this._handleDestroy.bind(this, comment.id)} /> }
-        { isDestroying && destroyed === comment.id && <div className="loader-wrapper"><Loader /></div> }
+        { /* It's fast, don't need loader */ }
+        { /* isDestroying && destroyed === comment.id && <div className="loader-wrapper"><Loader /></div> */ }
       </li>
     ));
 
