@@ -4,6 +4,19 @@
   left: 50%
   transform: translate(-50%, -50%)
 
+  @media mqPhone
+    position: relative
+    margin: 2rem auto
+    top: inherit
+    left: inherit
+    transform: none
+
+  @media mqTablet
+    width: 80%
+    
+  @media mqTabletP
+    width: 80%
+
   form
     margin: 1rem 0
 
@@ -45,3 +58,7 @@
         padding: 1rem 1.5rem
         border-radius: 0
         color: #fff
+
+        @media mqPhone
+          font-size: .8rem
+          padding: .5rem 1rem
