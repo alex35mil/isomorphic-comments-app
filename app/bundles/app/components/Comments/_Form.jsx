@@ -2,6 +2,7 @@ import React              from 'react';
 import { PropTypes }      from 'react';
 
 import animate            from 'app/libs/animate';
+import analytics          from 'app/libs/analytics';
 import Loader             from 'app/libs/components/Loader/Loader';
 
 import * as actionTypes   from '../../constants/CommentsConstants';
@@ -140,6 +141,11 @@ export default class Form extends React.Component {
     };
 
     commentsActions.addComment({ data });
+
+    analytics.sendEvent({
+      category: 'Comment',
+      action  : 'Added'
+    });
 
   }
 
