@@ -1,5 +1,5 @@
 import config   from 'config/server.app';
-import assets   from '../../public/assets/manifest.json';
+import assets   from 'public/assets/manifest.json';
 
 
 export default (asset, type) => {

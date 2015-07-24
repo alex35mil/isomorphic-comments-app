@@ -12,6 +12,8 @@ import Auth                 from 'app/libs/Auth';
 import populateState        from 'app/libs/populateState';
 import apiCall              from 'app/libs/apiCall';
 
+import chunks               from 'public/assets/chunk-manifest.json';
+
 
 export default async (req, res, next, params) => {
 
@@ -93,7 +95,8 @@ export default async (req, res, next, params) => {
         </Provider>
       );
 
-      locals.data = JSON.stringify(state);
+      locals.chunks = JSON.stringify(chunks);
+      locals.data   = JSON.stringify(state);
 
       const layout = `${process.cwd()}/app/bundles/${bundle}/layouts/Layout.jade`;
       const html   = Jade.compileFile(layout, { pretty: false })(locals);

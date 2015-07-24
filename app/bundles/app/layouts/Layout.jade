@@ -8,6 +8,8 @@ html
     #app!= body
     
     script.
+      window.__CHUNKS__ = !{chunks};
+    script.
       window.__DATA__ = !{data};
     script(src="#{vendorAsset}")
     script(src="#{jsAsset}")

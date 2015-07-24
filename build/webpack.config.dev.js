@@ -26,7 +26,8 @@ export default {
   resolve: {
     alias: {
       app   : path.join(process.cwd(), 'app'),
-      config: path.join(process.cwd(), 'config')
+      config: path.join(process.cwd(), 'config'),
+      public: path.join(process.cwd(), 'public')
     },
     extensions: ['', '.js', '.jsx']
   },
