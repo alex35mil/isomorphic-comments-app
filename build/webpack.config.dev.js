@@ -56,15 +56,7 @@ export default {
       'process.env': {
         'NODE_ENV': JSON.stringify('development')
       }
-    }),
-    function() {
-      this.plugin('done', stats => {
-        fs.writeFileSync(
-            path.join('./public', 'assets', 'assets.json'),
-            JSON.stringify(stats.toJson().assets)
-        );
-      });
-    }
+    })
   ],
 
   module: {
