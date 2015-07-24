@@ -34,12 +34,12 @@ export default class Topbar extends React.Component {
     const { isLoggedIn } = this.props.auth;
     const loginLink  = (
       <span id="topbar__auth-link__login__wrapper">
-        <Link to="/login" id="topbar__auth-link__login">Login</Link>
+        <Link to="/login" id="topbar__auth-link__login" className="link-dotted">Login</Link>
       </span>
     );
     const logoutLink = (
       <span id="topbar__auth-link__logout__wrapper">
-        <span id="topbar__auth-link__logout" onClick={::this._handleLogout}>Logout</span>
+        <span id="topbar__auth-link__logout" className="link-dotted" onClick={::this._handleLogout}>Logout</span>
       </span>
     );
 

@@ -2,6 +2,7 @@ import React              from 'react';
 import { PropTypes }      from 'react';
 
 import animate            from 'app/libs/animate';
+import analytics          from 'app/libs/analytics';
 import Loader             from 'app/libs/components/Loader/Loader';
 
 import * as actionTypes   from '../../constants/AuthConstants';
@@ -158,6 +159,11 @@ export default class Login extends React.Component {
 
     authActions.login({ data, authAgent, router });
 
+    analytics.sendEvent({
+      category: 'Login',
+      action  : 'Submitted'
+    });
+
   }
 
 
@@ -165,6 +171,14 @@ export default class Login extends React.Component {
 
     animate('login__form', 'shake');
 
+  }
+
+
+  _handleQuickLogin() {
+    this.setState({
+      login   : 'demo@demo.me',
+      password: 'demopass'
+    }, ::this._handleSuccessSubmit);
   }
 
 
@@ -205,7 +219,12 @@ export default class Login extends React.Component {
             </p>
             <p>
               Email: <strong>demo@demo.me</strong><br />
-              Password: <strong>demopass</strong>
+              Password: <strong>demopass</strong><br />
+              [&nbsp;
+              <span className="link-dotted" onClick={::this._handleQuickLogin}>
+                C'mon, log me in!
+              </span>
+              &nbsp;]
             </p>
           </div>
         </section>
