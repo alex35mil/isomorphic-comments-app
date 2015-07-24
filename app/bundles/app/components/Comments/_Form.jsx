@@ -42,7 +42,7 @@ export default class Form extends React.Component {
     const { name, value } = e.target;
 
     this.setState({
-      [name]: value.trim()
+      [name]: value
     }, this._validateForm.bind(this, null, name));
 
   }
