@@ -1,15 +1,19 @@
-import React              from 'react';
-import { PropTypes }      from 'react';
-import { Link }           from 'react-router';
+import React                  from 'react';
+import { PropTypes as Type }  from 'react';
 
-import CommentsList       from './_CommentsList';
-import CommentItem        from './_CommentItem';
-import Loader             from 'app/libs/components/Loader/Loader';
+import Loader                 from 'app/libs/components/Loader/Loader';
 
-import * as actionTypes   from '../../constants/CommentsConstants';
+import CommentsList           from './_CommentsList';
+import CommentItem            from './_CommentItem';
 
 
 export default class Comments extends React.Component {
+
+
+  static propTypes = {
+    comments: Type.object.isRequired,
+    params  : Type.object.isRequired
+  }
 
 
   constructor(props, context) {

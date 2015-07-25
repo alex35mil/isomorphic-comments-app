@@ -1,9 +1,17 @@
-import React          from 'react';
-import { PropTypes }  from 'react';
-import { Link }       from 'react-router';
+import React                  from 'react';
+import { PropTypes as Type }  from 'react';
+import { Link }               from 'react-router';
 
 
 export default class Header extends React.Component {
+
+
+  static propTypes = {
+    location       : Type.object.isRequired,
+    commentsActions: Type.shape({
+      loadComments: Type.func.isRequired
+    }).isRequired
+  }
 
 
   constructor(props, context) {

@@ -1,9 +1,18 @@
-import React          from 'react';
-import { PropTypes }  from 'react';
-import { Link }       from 'react-router';
+import React                  from 'react';
+import { PropTypes as Type }  from 'react';
+import { Link }               from 'react-router';
 
 
 export default class Comment extends React.Component {
+
+
+  static propTypes = {
+    comment: Type.shape({
+      id     : Type.number.isRequired,
+      author : Type.string.isRequired,
+      comment: Type.string.isRequired
+    }).isRequired
+  }
 
 
   constructor(props, context) {

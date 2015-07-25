@@ -1,13 +1,31 @@
-import React              from 'react';
-import { PropTypes }      from 'react';
-import { Link }           from 'react-router';
+import React                  from 'react';
+import { PropTypes as Type }  from 'react';
+import { Link }               from 'react-router';
 
 
 export default class Topbar extends React.Component {
 
 
+  static propTypes = {
+
+    auth: Type.shape({
+      isLoggedIn: Type.bool
+    }).isRequired,
+
+    authActions: Type.shape({
+      logout: Type.func.isRequired
+    }).isRequired,
+
+    authAgent: Type.shape({
+      login : Type.func.isRequired,
+      logout: Type.func.isRequired
+    })
+
+  }
+
+
   static contextTypes = {
-    router: PropTypes.object
+    router: Type.object.isRequired
   }
 
 

@@ -1,14 +1,28 @@
-import React              from 'react';
-import { PropTypes }      from 'react';
+import React                  from 'react';
+import { PropTypes as Type }  from 'react';
 
-import animate            from 'app/libs/animate';
-import analytics          from 'app/libs/analytics';
-import Loader             from 'app/libs/components/Loader/Loader';
+import animate                from 'app/libs/animate';
+import analytics              from 'app/libs/analytics';
+import Loader                 from 'app/libs/components/Loader/Loader';
 
-import * as actionTypes   from '../../constants/CommentsConstants';
+import * as actionTypes       from '../../constants/CommentsConstants';
 
 
 export default class Form extends React.Component {
+
+
+  static propTypes = {
+
+    comments: Type.shape({
+      type     : Type.string,
+      isPosting: Type.bool
+    }).isRequired,
+
+    commentsActions: Type.shape({
+      addComment: Type.func.isRequired
+    }).isRequired
+
+  }
 
 
   constructor(props, context) {
@@ -171,7 +185,7 @@ export default class Form extends React.Component {
             value={this.state.author}
             className={this.state.authorStatus}
             onChange={::this._handleValueChange}
-            autoFocus
+            autoFocus={true}
         />
         <input
             ref="comment"
@@ -184,7 +198,7 @@ export default class Form extends React.Component {
         />
         <div className="button-wrapper">
           <button disabled={isPosting}>Say!</button>
-          { isPosting && <Loader color="#fff" /> }
+          {isPosting && <Loader color="#fff" />}
         </div>
       </form>
     );

@@ -1,5 +1,5 @@
 import React                    from 'react';
-import { PropTypes }            from 'react';
+import { PropTypes as Type }    from 'react';
 import { bindActionCreators }   from 'redux';
 import { connect }              from 'react-redux';
 
@@ -21,6 +21,13 @@ import * as CommentsActions     from '../../actions/CommentsActions';
 }))
 
 export default class CommentsContainer extends React.Component {
+
+
+  static propTypes = {
+    auth    : Type.object.isRequired,
+    comments: Type.object.isRequired,
+    dispatch: Type.func.isRequired
+  }
 
 
   constructor(props, context) {

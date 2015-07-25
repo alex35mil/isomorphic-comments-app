@@ -1,11 +1,29 @@
-import React          from 'react';
-import { PropTypes }  from 'react';
-import { Link }       from 'react-router';
+import React                  from 'react';
+import { PropTypes as Type }  from 'react';
+import { Link }               from 'react-router';
 
-import Comment        from './_Comment';
+import Comment                from './_Comment';
 
 
 export default class CommentItem extends React.Component {
+
+
+  static propTypes = {
+
+    comments: Type.shape({
+      comments: Type.arrayOf(Type.shape({
+        id: Type.number.isRequired
+      })).isRequired
+    }).isRequired,
+
+    params: Type.shape({
+      id: Type.string.isRequired
+    }).isRequired,
+
+    loader  : Type.object,
+    setTitle: Type.func
+
+  }
 
 
   constructor(props, context) {
@@ -30,7 +48,6 @@ export default class CommentItem extends React.Component {
 
   render() {
 
-    const { commentsActions } = this.props;
     const { comments } = this.props.comments;
 
     const comment = comments.find(_comment => (
