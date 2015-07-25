@@ -21,10 +21,6 @@ export default (isDevBuild) => {
       paths: ['./server.app.js']
     },
 
-    lint: {
-      src: '.'
-    },
-
     images: {
       src     : _assets + '/images/**',
       dest    : _public + '/images/',
