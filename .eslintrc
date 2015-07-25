@@ -70,7 +70,7 @@ rules:
   react/react-in-jsx-scope: 2
   react/require-extension: [1, { extensions: [.js, .jsx] }]
   react/self-closing-comp: 2
-  react/sort-comp: 1
+  react/sort-comp: 0                                                            # Should be 1. `statics` should be on top.
   react/wrap-multilines: 2
 
   ### Node.js
