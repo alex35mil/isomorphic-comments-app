@@ -32,7 +32,7 @@ export default (isDevBuild) => {
       files: [
         [ '/fonts'                   ],
         [ '/tinies/favicon.ico', '/' ],
-        [ '/tinies/robots.txt' , '/' ]
+        [ '/tinies/robots.txt',  '/' ]
       ],
       to: _public
     },
